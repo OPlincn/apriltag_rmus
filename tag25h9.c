@@ -1,76 +1,23 @@
-/* Copyright (C) 2013-2016, The Regents of The University of Michigan.
-All rights reserved.
-This software was developed in the APRIL Robotics Lab under the
-direction of Edwin Olson, ebolson@umich.edu. This software may be
-available under alternative licensing terms; contact the address above.
-Redistribution and use in source and binary forms, with or without
-modification, are permitted provided that the following conditions are met:
-1. Redistributions of source code must retain the above copyright notice, this
-   list of conditions and the following disclaimer.
-2. Redistributions in binary form must reproduce the above copyright notice,
-   this list of conditions and the following disclaimer in the documentation
-   and/or other materials provided with the distribution.
-THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
-ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
-WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
-DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR
-ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
-(INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
-LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
-ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
-(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
-SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-The views and conclusions contained in the software and documentation are those
-of the authors and should not be interpreted as representing official policies,
-either expressed or implied, of the Regents of The University of Michigan.
-*/
-
 #include <stdlib.h>
 #include "tag25h9.h"
 
-static uint64_t codedata[35] = {
-   0x000000000156f1f4UL,
-   0x0000000001f28cd5UL,
-   0x00000000016ce32cUL,
-   0x0000000001ea379cUL,
-   0x0000000001390f89UL,
-   0x000000000034fad0UL,
-   0x00000000007dcdb5UL,
-   0x000000000119ba95UL,
-   0x0000000001ae9daaUL,
-   0x0000000000df02aaUL,
-   0x000000000082fc15UL,
-   0x0000000000465123UL,
-   0x0000000000ceee98UL,
-   0x0000000001f17260UL,
-   0x00000000014429cdUL,
-   0x00000000017248a8UL,
-   0x00000000016ad452UL,
-   0x00000000009670adUL,
-   0x00000000016f65b2UL,
-   0x0000000000b8322bUL,
-   0x00000000005d715bUL,
-   0x0000000001a1c7e7UL,
-   0x0000000000d7890dUL,
-   0x0000000001813522UL,
-   0x0000000001c9c611UL,
-   0x000000000099e4a4UL,
-   0x0000000000855234UL,
-   0x00000000017b81c0UL,
-   0x0000000000c294bbUL,
-   0x000000000089fae3UL,
-   0x000000000044df5fUL,
-   0x0000000001360159UL,
-   0x0000000000ec31e8UL,
-   0x0000000001bcc0f6UL,
-   0x0000000000a64f8dUL,
+static uint64_t codedata[9] = {
+   0x0000000000c81ec9UL,
+   0x0000000000e23ec8UL,
+   0x0000000000e2ae29UL,
+   0x000000000028e9a6UL,
+   0x0000000001e4ae4bUL,
+   0x0000000000e4ae3bUL,
+   0x0000000001e2ae7bUL,
+   0x0000000000e38e38UL,
+   0x0000000001145145UL,
 };
 apriltag_family_t *tag25h9_create()
 {
    apriltag_family_t *tf = calloc(1, sizeof(apriltag_family_t));
    tf->name = strdup("tag25h9");
    tf->h = 9;
-   tf->ncodes = 35;
+   tf->ncodes = 9;
    tf->codes = codedata;
    tf->nbits = 25;
    tf->bit_x = calloc(25, sizeof(uint32_t));

@@ -55,7 +55,7 @@ int main(int argc, char *argv[])
     getopt_add_int(getopt, 'c', "camera", "0", "camera ID");
     getopt_add_bool(getopt, 'd', "debug", 0, "Enable debugging output (slow)");
     getopt_add_bool(getopt, 'q', "quiet", 0, "Reduce output");
-    getopt_add_string(getopt, 'f', "family", "tag36h11", "Tag family to use");
+    getopt_add_string(getopt, 'f', "family", "tag25h9", "Tag family to use");
     getopt_add_int(getopt, 't', "threads", "1", "Use this many CPU threads");
     getopt_add_double(getopt, 'x', "decimate", "2.0", "Decimate input image by this factor");
     getopt_add_double(getopt, 'b', "blur", "0.0", "Apply low-pass blur to input");
@@ -100,7 +100,7 @@ int main(int argc, char *argv[])
     } else if (!strcmp(famname, "tagCustom48h12")) {
         tf = tagCustom48h12_create();
     } else {
-        printf("Unrecognized tag family name. Use e.g. \"tag36h11\".\n");
+        printf("Unrecognized tag family name. Use e.g. \"tag25h9\".\n");
         exit(-1);
     }
 
